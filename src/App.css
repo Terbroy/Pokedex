@@ -15,7 +15,7 @@ body{
 
 .home{
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -77,8 +77,15 @@ body{
   bottom: 0;
   width: 100%;
   content: '';
-  height: 20vh;
+  height: 10rem;
   background-color: #eb1f1f;
+}
+
+.pokebola{
+  position: absolute;
+  z-index: 2;
+  width: 7rem;
+  bottom: .5rem;
 }
 
 .home::before{
@@ -87,7 +94,7 @@ body{
   z-index: 1;
   width: 100%;
   content: '';
-  height: 8vh;
+  height: 4rem;
   background-color: black;
 }
 
@@ -101,6 +108,19 @@ body{
   background-color: #eb1f1f;
 }
 
+.pokebola-nav{
+  position: absolute;
+  top: 1.8vh;
+  right: 3rem;
+  width: 10rem;
+  transition: all 1s;
+}
+
+.pokebola-nav:hover{
+  rotate: 90deg;
+  cursor: pointer
+}
+
 .nav::before{
   position: absolute;
   top: 11vh;
@@ -111,7 +131,7 @@ body{
   background-color: black;
 }
 
-.nav img{
+.nav img.title{
   position: absolute;
   z-index: 2;
   width: 570px;
@@ -123,6 +143,7 @@ body{
 .pokemons, .pokemon{
   padding: 22vh 7% 0 7%;
 }
+
 
 .welcome-pokemons{
   color: black;
@@ -296,7 +317,7 @@ button{
   padding: 10rem 0 0 0;
   margin: 40vh 4rem 0 4rem;
   position: relative;
-  border: 4px solid #fff;
+  border: 4px solid #000;
 }
 
 
@@ -304,11 +325,12 @@ button{
   position: absolute;
   top:-9rem;
   width: 20rem;
+  justify-content: center;
 }
 
 .pokemon-info-card{
   background-color: #fff;
-  width: 101%;
+  width: 100%;
   padding: 3rem 5rem;
   display: flex;
   justify-content: center;
@@ -477,6 +499,7 @@ button{
   padding: 5rem;
   margin: 2rem 4rem ;
   position: relative;
+  border: 4px solid #000;
 }
 
 
@@ -488,4 +511,359 @@ button{
   background-color: rgb(231, 228, 228);
   margin: .5rem;
   border-radius: 90px;
+}
+
+@media screen and (max-width: 800px ) {
+    
+    .login{
+      width:80%;
+    }
+    
+    .welcome{
+      font-size: 2rem;
+    }
+    
+    .welcome-paragraph{
+      font-size: .9rem;
+    }
+    
+    .input-name{
+      width: 100%;
+      box-shadow: 0px 6px 13px -7px gray;
+    }
+
+    .nav::after{
+      height: 4rem;
+    }
+
+    .pokebola-nav{
+      top: 1.7rem;
+      right: 1rem;
+      width: 3.5rem;
+    }
+
+    .nav::before{
+      top: 3.5rem;
+      height: 2.5rem;
+    }
+
+    .nav img.title{
+      width: 200px;
+      height: 40px;
+      top: 1.2rem;
+      left: 1rem;
+      padding: 0;
+
+    }
+
+    .pokemons, .pokemon{
+      padding: 8rem 1rem 1rem 1rem;
+    }
+
+
+    .welcome-pokemons{
+      font-size: 1rem;
+    }
+
+    .pokemons p b {
+      font-size: 1.5rem;
+    }
+
+    .search{
+      gap: 1rem;
+      flex-direction: column;
+      padding-bottom: 1.5rem;
+    }
+
+    .filter{
+      align-self: center;
+      width: 100%;
+    }
+
+    .pokemons-container{
+      grid-template-columns:1fr;
+      background-color: transparent;
+      padding: .5rem;
+      justify-items: center;
+    }
+    
+    .pokemon-card{
+      width: 15rem;
+      height: 20rem;
+      gap: .5rem;
+      border: 5px solid rgb(54, 54, 54);
+    }
+
+    .pokemon-card img{
+      width: 10rem;
+      top: 1rem;
+    }
+
+    .pokemon-info{
+      padding: .8rem;
+      padding-top: 3rem;
+    }
+
+    .pokemon-type h4{
+      font-size: 1rem;
+    }
+    .pokemon-type p{
+      font-size: .6rem;
+    }
+    .pokemon-type small{
+      font-size: .5rem;
+    }
+
+    .pokemon-division{
+      margin:.4rem 0;
+      width: 100%;
+      left: 0;
+    }
+
+    .pokemons-skills{
+      padding: 0 2.5rem;
+      gap: .5rem;
+    }
+
+
+    .skills small{
+      font-size: .5rem;
+    }
+
+    .skills p{
+      font-size: .9rem;
+    }
+
+    .pagination button{
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .btn-prev, .btn-nxt{
+      padding: .5rem;
+      font-size: .5rem;
+    }
+
+    .pokemon{
+      padding: 10rem 0 0 0;
+      margin: 20vh 1rem 0 1rem;
+      border: 2px solid #000;
+    }
+
+    .pokemon img{
+      top:-4.5rem;
+      width: 15rem;
+    }
+
+    .pokemon-info-card{
+      padding: 1.5rem 2rem;
+      gap: .5rem;
+    }
+
+    .pokemon-id{
+      padding: .5rem 1rem;
+      font-size: 1rem;
+    }
+
+    .pokemon-title h2{
+      font-size: 1rem;
+    }
+
+    .pokemon-size{
+      gap: 1rem;
+    }
+
+    .size small{
+      font-size: .5rem;
+    }
+    .size p{
+      font-size: 1rem;
+    }
+
+    .pokemon-characteristics{
+      gap: 1rem;
+      padding-bottom: 1rem;
+      flex-direction: column;
+    }
+
+    .container-characteristics{
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .characteristics{
+      gap: .5rem;
+    }
+
+    .type-name{
+      padding:.3rem .5rem;
+      width: 50%;
+      font-size: .6rem;
+    }
+
+    .abilities-name{
+      padding: .3rem .5rem;
+      font-size: .5rem;
+    }
+
+    .title{
+      gap:.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .title h2{
+      font-size: 1.5rem;
+    }
+
+    .title hr{
+      width: 100%;
+    }
+
+    .stats-container{
+      gap: .5rem;
+    }
+
+    .stats div p{
+      font-size: .6em;
+    }
+
+    .background{
+      height: .5rem;
+    }
+
+    .background + hr{
+      top: 1.5rem;
+      height: 1rem;
+    }
+
+    .movements{
+      padding: 1rem .5rem;
+      margin: 2rem 1rem ;
+      border: 2px solid #000;
+    }
+
+    .moves{
+      font-size: .5rem;
+      padding: .2rem;
+      background-color: rgb(231, 228, 228);
+    }
+}
+
+@media screen and (min-width: 501px ) and (max-width:800px) {
+
+  .pokebola-nav{
+    top: 1.7rem;
+    right: 1rem;
+    width: 5rem;
+  }
+
+  .nav::before{
+    top: 4rem;
+    height: 3rem;
+  }
+
+  .nav img.title{
+    width: 320px;
+    height: 50px;
+    top: 1.2rem;
+    left: 1rem;
+    padding: 0;
+
+  }
+
+  .pokemons, .pokemon{
+    padding: 10rem 1rem 1rem 1rem;
+  }
+
+  .search{
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    flex-direction: row;
+  }
+
+  .input-name{
+    flex-grow: 2
+    ;
+  }
+
+  .filter-select{
+    flex-grow: 1;
+  }
+
+  .pokemons-container{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .pagination button{
+    width: 3rem;
+    height:3rem;
+  }
+
+  .btn-prev, .btn-nxt{
+    padding: .5rem;
+    font-size: .8rem;
+  }
+
+  .pokemon{
+    padding: 10rem 0 0 0;
+    margin: 25vh 1rem 0 1rem;
+  }
+
+  .pokemon-id{
+    padding:1rem;
+    font-size: 1.5rem;
+  }
+
+  .pokemon-title h2{
+    font-size: 1.5rem;
+  }
+
+  .size small{
+    font-size:.7rem;
+  }
+  .size p{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .pokemon-characteristics{
+    gap: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .type-name{
+    padding:.5rem .7rem;
+    width: 50%;
+    font-size: 1rem;
+  }
+
+  .abilities-name{
+    padding: .5rem .7rem;
+    font-size: 1rem;
+  }
+
+
+  .stats-container{
+    gap: 1rem;
+  }
+
+  .stats div p{
+    font-size: 1rem;
+  }
+
+  .movements{
+    padding: 1rem 2rem;
+  }
+
+  .moves{
+    font-size: 1rem;
+    padding: .5rem;
+    background-color: rgb(231, 228, 228);
+  }
+}
+
+@media screen and (min-width: 800px ) and (max-width:900px) {
+  .pokemons-container{
+    grid-template-columns:1fr 1fr 1fr;
+  }
 }

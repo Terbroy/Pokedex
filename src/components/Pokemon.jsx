@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import image from '../assets/image.png'
+import pokedex from '../assets/pokebola.png'
 
 const Pokemon = () => {
     const { id } = useParams()
     const [pokemon, setPokemon] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios
@@ -16,12 +18,14 @@ const Pokemon = () => {
     const types = pokemon.types
     const abilities = pokemon.abilities
     const moves = pokemon.moves
-    console.log(abilities);
 
     return (
         <>
             <div className='nav'>
-                <img src={image} alt="Pokedex" />
+                <button onClick={()=>navigate(-1)}>
+                <img src={image} className='title' alt="Pokedex" />
+                </button>
+                <img className='pokebola pokebola-nav' src={pokedex} alt="" srcset="" />
             </div>
             <div className='pokemon'>
                 <img src={pokemon.sprites?.other['official-artwork'].front_default} alt="" />

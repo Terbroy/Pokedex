@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PokemonCard from './PokemonCard';
 import image from '../assets/image.png'
+import pokedex from '../assets/pokebola.png'
 
 const Pokemons = () => {
     const name = useSelector((state) => state.userName)
@@ -15,7 +16,7 @@ const Pokemons = () => {
     const [type, setType] = useState([])
 
     useEffect(() => {
-        axios.get('https://pokeapi.co/api/v2/pokemon/')
+        axios.get('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=9999')
             .then(res => setPokemon(res.data.results))
 
         axios.get('https://pokeapi.co/api/v2/type')
@@ -39,6 +40,7 @@ const Pokemons = () => {
     const pokemonPaginated = pokemon.slice(firstPokemonIndex, lastPokemonIndex)
     const totalPages = Math.ceil(pokemon.length / pokemonsPerPage)
     const pagesNumbers = []
+
     for (let i = 1; i <= totalPages; i++) {
         pagesNumbers.push(i)
     }
@@ -48,7 +50,8 @@ const Pokemons = () => {
     return (
         <>
             <div className='nav'>
-                <img src={image} alt="Pokedex" />
+                <img src={image} className='title' alt="Pokedex" />
+                <img className='pokebola pokebola-nav' src={pokedex} alt="" srcset="" />
             </div>
             <div className='pokemons'>
                 <p className='welcome-pokemons'>
@@ -91,9 +94,11 @@ const Pokemons = () => {
                         Prev page
                     </button>
                     {
-                        pagesNumbers.map(e => (
-                            <button className='btn-num' onClick={() => setPage(e)}>{e}</button>
-                        ))
+                        pagesNumbers.map(e => {
+                            if(e<=5){
+                                return (<button className='btn-num' onClick={() => setPage(e)}>{e}</button>)
+                            }
+                        })
                     }
                     <button
                         onClick={() => setPage(page + 1)}

@@ -13,7 +13,6 @@ const PokemonCard = ({ url }) => {
             .then(res => setPokemon(res.data))
     }, [])
 
-    console.log(pokemon);
     return (
         <div 
         onClick={() => navigate(`/pokemons/${pokemon.id}`)}
